@@ -28,15 +28,22 @@ namespace Zad2
         {
             get
             {
+                
                 // This is invoked when accessing Layout instances with the [ ].
                 if (index >= 0 && index < this.temps.Length)
                 {
-                    // Bounds were in range, so return the stored value.
-                    return temps[index];
+
+                 
+                        // Bounds were in range, so return the stored value.
+                        return temps[index];
+                     
+                    
                 }
                 else
                 {
-                    return -1;
+                    throw new InvalidIndexException() { 
+                        
+                    };
                 }
             
             }
@@ -47,11 +54,18 @@ namespace Zad2
                     // Assign to this element slot in the internal array.
                     temps[index] = value;
                 }
+                else if (index >= 0 && index >= temps.Length)
+                {
+                    addFarElement(index, value);
+                }
             }
         }
 
 
-
+        public int getlenght()
+        {
+            return this.temps.Length-1;
+        }
 
 
 
@@ -63,11 +77,22 @@ namespace Zad2
         public void addElement(int element)
         {
             int lenght = temps.Length;
-            int[] newTable = new int[lenght + 1];
-            Array.Copy(this.temps, newTable, lenght);
-            newTable[lenght] = element;
+            int[] newTable = new int[lenght+1];
+            Array.Copy(this.temps, newTable, lenght-1);
+            newTable[lenght-1] = element;
             this.temps = newTable;
 
+        }
+
+        // funkcja gdy w indeksatorze damy daleko poza index nowy element
+
+        private void addFarElement(int index, int element)
+        {
+            int lenght = temps.Length;
+            int[] newTable = new int[index+1];
+            Array.Copy(this.temps, newTable, lenght);
+            newTable[index] = element;
+            this.temps = newTable;
         }
     }
 }

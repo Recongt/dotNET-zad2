@@ -11,12 +11,22 @@ namespace Zad2
         {
 
             Table a = new Table();
-            a.addElement(1);
-            a[1] = 3;
-            a.addElement(2);
-            System.Console.WriteLine(a[2]);
+            for (int i = 0; i < 8; i++)
+            {
+                a[i] = i;
+            }
 
-            System.Console.ReadLine();
+                //System.Console.WriteLine(a[3]);
+
+                System.Console.WriteLine("Rozmiar: {0}", a.getlenght());
+            
+            for (int i = 0; i < a.getlenght(); i++)
+            {
+                System.Console.Write("{0}: {1} , ", i, a[i]);
+            }
+
+
+                System.Console.ReadLine();
         }
     }
 }
