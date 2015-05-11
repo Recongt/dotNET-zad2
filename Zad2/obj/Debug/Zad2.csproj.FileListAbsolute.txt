@@ -1,0 +1,5 @@
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\Zad2\Zad2\obj\Debug\Zad2.csprojResolveAssemblyReference.cache
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\Zad2\Zad2\bin\Debug\Zad2.exe
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\Zad2\Zad2\bin\Debug\Zad2.pdb
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\Zad2\Zad2\obj\Debug\Zad2.exe
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\Zad2\Zad2\obj\Debug\Zad2.pdb

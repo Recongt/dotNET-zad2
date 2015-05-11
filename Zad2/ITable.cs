@@ -7,10 +7,10 @@ namespace Zad2
 {
     interface ITable
     {
-
-        public int getElement(int index);
-        public int addElement(int element);
-
+        
+        int getElement(int index);
+        void addElement(int element);
+        
     
 
     }

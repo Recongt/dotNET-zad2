@@ -5,30 +5,69 @@ using System.Text;
 
 namespace Zad2
 {
-    class Table{
-
-    
-   private int[] temps;
-
-
-    public int Length
+    class Table : ITable
     {
-        get { return temps.Length; }
-    }
 
-    public int this[int index]
-    {
-        get
+
+
+
+        private int[] temps = new int[100];
+
+        public Table(int size)
+        {
+            this.temps = new int[size];
+
+        }
+        public Table()
+        {
+            this.temps = new int[1];
+
+        }
+
+        public int this[int index]
+        {
+            get
+            {
+                // This is invoked when accessing Layout instances with the [ ].
+                if (index >= 0 && index < this.temps.Length)
+                {
+                    // Bounds were in range, so return the stored value.
+                    return temps[index];
+                }
+                else
+                {
+                    return -1;
+                }
+            
+            }
+            set
+            {
+                if (index >= 0 && index < temps.Length)
+                {
+                    // Assign to this element slot in the internal array.
+                    temps[index] = value;
+                }
+            }
+        }
+
+
+
+
+
+
+        public int getElement(int index)
         {
             return temps[index];
         }
 
-        set
+        public void addElement(int element)
         {
-            temps[index] = value;
+            int lenght = temps.Length;
+            int[] newTable = new int[lenght + 1];
+            Array.Copy(this.temps, newTable, lenght);
+            newTable[lenght] = element;
+            this.temps = newTable;
+
         }
     }
-
-
-
 }
